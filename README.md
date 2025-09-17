@@ -25,7 +25,7 @@ This conceptual data pipeline will lay the foundation for building the actual pi
 
 ## Conceptual Pipeline Architecture.
 
-### 1. Source Identification
+## 1. Source Identification.
 **Sources**
 - Social Media (public posts + DMs)
 - Call center logs (voice transcripts + metadata)
@@ -37,7 +37,7 @@ This conceptual data pipeline will lay the foundation for building the actual pi
 - Near‑real‑time streaming for some partner feeds.
 - Batch uploads for daily call logs and periodic exports from legacy systems.
 
-### 2. Ingestion Strategy
+## 2. Ingestion Strategy.
 
 **Hybrid ingestion**
 - Streaming collectors for real‑time channels.
@@ -46,7 +46,7 @@ This conceptual data pipeline will lay the foundation for building the actual pi
 **Real‑time handling**
 - Social media public stream and live chat event streams --> buffered --> validated --> appended to raw storage.
 
-### 3. Processing & Transformation
+## 3. Processing & Transformation.
 
 **Cleaning & Standardization Stages**
 
@@ -72,7 +72,7 @@ This conceptual data pipeline will lay the foundation for building the actual pi
 
 **Privacy:** PII detection and masking or tokenization before moving to curated stores.
 
-### 4. Storage Options
+## 4. Storage Options.
 
 **Zones**
 
@@ -86,7 +86,7 @@ This conceptual data pipeline will lay the foundation for building the actual pi
 - Columnar files (Parquet) for analytics and ML training artifacts.
 - JSON or Avro for event interchange where schema evolution matters.
 
-### 5. Serving
+## 5. Serving.
 
 **Querying** 
 - Analytical layer that supports SQL queries.
@@ -102,7 +102,7 @@ This conceptual data pipeline will lay the foundation for building the actual pi
 
 - APIs for customer care systems to fetch consolidated complaint history per customer.
 
-### 6. Orchestration & Monitoring
+## 6. Orchestration & Monitoring.
 
 - **Orchestration:** Streaming pipelines run continuously; batch jobs for legacy systems run on a schedule (hourly/daily). Reconciliation jobs run daily to ensure completeness.
 
@@ -110,13 +110,13 @@ This conceptual data pipeline will lay the foundation for building the actual pi
 
 - **Failure handling:** Automatic retries with exponential backoff, dead‑letter queues for poisoned messages, and alerting (email/IM/pager) for sustained failures or SLA breaches.
 
-### 7. DataOps & Productionization
+## 7. DataOps & Productionization.
 
 - **Deployment:** Pipelines are packaged and deployed to an orchestration environment with versioned artifacts and configuration per environment (dev/stage/prod).
 
 - **Access & governance:** Role‑based access to raw vs curated zones; audit logging for data access; schemas and contracts versioned. Data retention policies applied per regulatory needs.
 
-### Design choices
+## Design choices.
 
 1. Hybrid streaming + batch covers both real‑time and legacy systems.
 
@@ -128,7 +128,7 @@ This conceptual data pipeline will lay the foundation for building the actual pi
 
 5. Strong observability and DLQ patterns reduce operational risk.
 
-### Assumptions
+## Assumptions.
 
 1. Customer identifiers are present in at least some channels or can be resolved via matching heuristics.
 
@@ -138,7 +138,7 @@ This conceptual data pipeline will lay the foundation for building the actual pi
 
 4. Teams will adopt APIs and shared datasets rather than continue manual spreadsheets.
 
-### Challenges
+## Challenges.
 
 1. Identity resolution across channels may be challenging (phone, email, anonymized social handles).
 
