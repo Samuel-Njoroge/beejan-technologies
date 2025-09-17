@@ -1,5 +1,5 @@
 ## Conceptual Data Pipeline Architecture.
-![Architecture]()
+![Architecture](https://github.com/Samuel-Njoroge/beejan-technologies/blob/main/assets/conceptual-design.svg)
 
 ## 1. Source Identification.
 **Sources**
