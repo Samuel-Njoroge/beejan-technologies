@@ -1,4 +1,5 @@
 ## Conceptual Data Pipeline Architecture.
+![Architecture]()
 
 ## 1. Source Identification.
 **Sources**
@@ -57,7 +58,7 @@
 
 - Serving/Analytical Store optimized for low‑latency queries and dashboards.
 
-** File Formats** 
+**File Formats** 
 - Columnar files (Parquet) for analytics and ML training artifacts.
 - JSON or Avro for event interchange where schema evolution matters.
 
